@@ -14,7 +14,7 @@ end
 
 
 class Franquia 
-	attr_accessor :restaurantes
+
 	def initialize
 		@restaurantes = []
 	end
@@ -32,9 +32,8 @@ class Franquia
 	end
 
 	def relatorio
-		@restaurantes.each do |r|
+		@restaurante.each do |r|
 		yield r
-		end
 	end		
 	
 
@@ -71,13 +70,6 @@ franquia.adcionar restaurante_um, restaurante_dois
 #franquia.adcionar restaurante_um
 #franquia.adcionar restaurante_dois
 #=end
-
-#passando bloco de codigo
-franquia.relatorio do |r|
-	puts "restaurante cadsatro: #{r.nome}"
-end
-
-
 franquia.mostra
 
-franquia.restaurantes.map(&:nome).map{|n| puts n,"ZZZ"}
+

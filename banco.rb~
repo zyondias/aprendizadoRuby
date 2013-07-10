@@ -1,0 +1,34 @@
+class Banco
+
+	attr_accessor :contas
+	def imprimir_saldo
+		for conta in @contas
+		puts conta.saldo
+	end
+
+	def pessoas_do_banco
+		pessoas = []
+		for conta in @contas
+			pessoas << conta.pessoa
+		end
+		#retornando pessoa
+		pessoa
+	end
+
+	def 
+
+	def contas_mue
+	   mulheres=[]
+	   for conta in @contas
+		mulheres<<conta if conta.pessoa.sexo == "F"
+	   end
+	  mulheres
+	end
+
+end
+
+
+#metodo para receber bloco de codigo é com &
+def relatorio (&bloco)
+	for conta in @conta
+end

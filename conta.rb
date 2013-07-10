@@ -13,6 +13,9 @@ class Conta
 	 @saldo -= valor
 	end
 	def depositar(valor)
+	 raise "Não  faz isso " if valor < 0 #retornando erro se o valor de
+	# depoisto for menor q 0 direto na consele sem nenhum traamento
+
 	 operacao << valor
 	 @saldo += valor
 	end
@@ -49,7 +52,15 @@ puts hs[:empresa]
 
 zyon = Conta.new
 puts zyon.saldo
-zyon.depositar(100)
+
+#traatndo erro 
+begin	
+	zyon.depositar(-100)
+rescue => e
+	puts "algo errado #{e}"
+
+end
+
 puts zyon.saldo
 
 #array
