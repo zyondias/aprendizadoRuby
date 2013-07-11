@@ -52,14 +52,15 @@ class Restaurante
 end
 
 restaurante_um = Restaurante.new
-restaurante_um.nome = "Fasano"
+restaurante_um.nome = "fasano"
 #uma forma de passar hash
 restaurante_um.fechar_conta(valor: 50, nota: 1, comentario: "Muito ruim")
 
 restaurante_dois = Restaurante.new
-restaurante_dois.nome = "Fogo de chao"
+restaurante_dois.nome = "fogo de chao"
 #outra forma de passar hash
 restaurante_dois.fechar_conta :comentario => "SHOW D E BOLA CARO PACAS", :valor => 10000, :nota => 10
+
 
 
 franquia = Franquia.new
@@ -78,6 +79,14 @@ franquia.relatorio do |r|
 end
 
 
+franquia.restaurantes.map { |r|  r.nome.capitalize }
+franquia.restaurantes.each do |r|
+		puts r.nome
+	end
+
+
 franquia.mostra
 
 franquia.restaurantes.map(&:nome).map{|n| puts n,"ZZZ"}
+
+
